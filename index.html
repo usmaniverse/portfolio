@@ -233,6 +233,17 @@ ul.svc a:hover .go{transform:translateX(4px)}
 .skip{position:absolute;left:12px;top:-60px;z-index:30;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;font-weight:500}
 main:focus{outline:none}
 .skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+/* Quotes */
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.quotes{grid-template-columns:minmax(0,1fr)}}
+.quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;display:grid;gap:18px;align-content:space-between;position:relative}
+.quote::before{content:"\201C";position:absolute;top:6px;right:22px;font-size:4.5rem;line-height:1;font-weight:700;color:var(--accent-soft)}
+.quote blockquote{margin:0}
+.quote p{font-size:1.02rem;line-height:1.6;color:var(--ink);position:relative}
+.quote figcaption{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
+.quote figcaption b{font-weight:600}
+.quote figcaption span{font-size:.85rem;color:var(--muted)}
+.qsrc{font-size:.875rem;color:var(--muted)}
 /* Contact */
 .contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
 @media (max-width:960px){.contact{grid-template-columns:minmax(0,1fr)}}
@@ -418,6 +429,19 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.8125r
       </div>
     </section>
   </div>
+
+  <!-- QUOTES -->
+  <section class="section wrap" id="quotes" aria-labelledby="quotes-h">
+    <span class="eyebrow">What people say</span>
+    <h2 id="quotes-h">From the people I've built with</h2>
+    <div class="quotes">
+      <figure class="quote"><blockquote><p>He successfully led the revamping of the Passenger app, demonstrating exceptional skills, expertise, and leadership throughout the project. … Under his leadership, the project was completed within the deadline, resulting in a successful adoption.</p></blockquote><figcaption><b>Saira Liaqat</b><span>Software Engineer · worked with Usman at Jeeny</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>His skills in iOS development are exceptional, and I am consistently impressed by his meticulous attention to detail. … Usman encourages innovative and efficient solutions, and he provides valuable feedback by discussing and refining these ideas with the team.</p></blockquote><figcaption><b>Hassam Ali</b><span>Senior iOS Developer · reported to Usman at Jeeny</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>Usman has an exceptional ability to understand complex requirements and turn them into elegant and functional solutions.</p></blockquote><figcaption><b>Kanaan Zafar</b><span>Senior iOS Engineer · worked on the same team</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>Usman's ability to lead by example and take initiative in challenging situations greatly contributed to the Jeeny's success.</p></blockquote><figcaption><b>Mawish Jamshaid Iqbal</b><span>Senior colleague at Jeeny</span></figcaption></figure>
+    </div>
+    <p class="qsrc">From recommendations on <a href="https://www.linkedin.com/in/usmaniverse/details/recommendations/" target="_blank" rel="noopener" data-umami-event="Quotes: LinkedIn recommendations">my LinkedIn profile ↗</a></p>
+  </section>
 
   <!-- WORK WITH ME -->
   <section class="section wrap" id="work-with-me" aria-labelledby="wwm-h">
