@@ -67,8 +67,9 @@ nav a{color:var(--muted);text-decoration:none} nav a:hover{color:var(--ink)}
 .hero h1 span{display:block;white-space:nowrap}
 .hero .lede{font-size:clamp(1.08rem,1.7vw,1.22rem)}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
-.avail{color:var(--muted);font-size:.95rem}
-.avail b{color:var(--ok);font-weight:600}
+.avail{display:inline-flex;align-items:center;gap:9px;justify-self:start;max-width:100%;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.78rem;line-height:1.4;color:var(--ink);background:var(--accent-soft);padding:7px 14px;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+.hero h1 em{font-style:normal;color:var(--accent)}
 .hero-phone{display:flex;justify-content:center}
 .hero-phone .phone{width:min(250px,52vw);--t:var(--jeeny);--ts:var(--jeeny-soft)}
 .trust{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding-block:24px 32px;border-top:2px solid var(--ink);color:var(--muted)}
@@ -244,13 +245,13 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.85rem
           <img src="photo.jpg" width="56" height="56" alt="Portrait of Muhammad Usman Javed">
           <div><b>Muhammad Usman Javed</b><span>Senior iOS Engineer in Lahore</span></div>
         </div>
-        <h1 id="hero-h"><span class="ln1">From idea to App&nbsp;Store,</span> <span class="ln2">built right and shipped faster.</span></h1>
+        <h1 id="hero-h"><span class="ln1">From idea to <em>App&nbsp;Store</em>,</span> <span class="ln2">built right and shipped faster.</span></h1>
         <p class="lede">I help companies and founders build, modernize and scale their iPhone apps, and set their teams up to ship with AI coding agents. Hands-on in Swift, SwiftUI and UIKit, with the experience to lead.</p>
         <div class="actions">
           <a data-umami-event="Hero: See the work" class="btn primary" href="#proof">See the work</a>
           <a data-umami-event="Hero: Start a conversation" class="btn" href="#contact">Start a conversation</a>
         </div>
-        <p class="avail"><b>Available now</b> for full-time and contract work, remote or with relocation.</p>
+        <p class="avail"><i aria-hidden="true"></i>Available for full-time and contract work · remote or relocation</p>
       </div>
       <div class="hero-phone" role="img" aria-label="Illustration of a ride-tracking screen on an iPhone">
         <div class="phone"><div class="screen">
