@@ -3,372 +3,276 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Muhammad Usman Javed · Senior iOS Engineer</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<title>Muhammad Usman Javed, Senior iOS Engineer</title>
 <meta name="description" content="Muhammad Usman Javed, Senior iOS Engineer. Hands-on in Swift, SwiftUI and UIKit, leads teams, and ships with AI coding agents.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap">
 <style>
-/* Layout: an editorial, work-first page. Each project is a band: phones on one side, the story on the other. No resume sections; the PDF holds those. */
+/* Direction C: A's structure and type (Instrument Sans), B's map palette, B's AI layout and route-style process. */
 :root{
-  --bg:#f6f7f9; --surface:#ffffff; --ink:#11151c; --muted:#5a6371; --faint:#5f6773; --line:#e1e4e9; --accent:#2457d6; --accent-soft:#e9eefc; --ok:#178a4a;
-  --map:#eef1f5; --on-accent:#ffffff; --inv-bg:#11151c; --inv-fg:#f6f7f9; --road:#ffffff; --phone:#11151c; --glow:rgba(36,87,214,.07);
-  --f-body:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --bg:#eceee8; --surface:#ffffff; --ink:#15212b; --muted:#56636b; --line:#d3d8cf;
+  --accent:#34509e; --accent-soft:#dde3f1; --ok:#3e8e5e; --on-accent:#ffffff; --btn:#34509e; --on-btn:#ffffff;
+  --jeeny:#3e8e5e; --jeeny-soft:#cfe2d3; --prop:#34509e; --prop-soft:#dde3f1;
+  --map:#e1e4dc; --road:#ffffff; --phone:#15212b; --inv-bg:#15212b; --inv-fg:#eceee8;
+  --f:"Instrument Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0c0f14; --surface:#141921; --ink:#e7eaef; --muted:#9aa3b0; --faint:#808996; --line:#242b35; --accent:#7ea2ff; --accent-soft:#18213a; --ok:#3ccf7e;
-  --map:#1a2029; --on-accent:#0c0f14; --inv-bg:#1b2540; --inv-fg:#e7eaef; --road:#232a35; --phone:#2a313c; --glow:rgba(126,162,255,.08); color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0c0f14; --surface:#141921; --ink:#e7eaef; --muted:#9aa3b0; --faint:#808996; --line:#242b35; --accent:#7ea2ff; --accent-soft:#18213a; --ok:#3ccf7e; --map:#1a2029; --on-accent:#0c0f14; --inv-bg:#1b2540; --inv-fg:#e7eaef; --road:#232a35; --phone:#2a313c; --glow:rgba(126,162,255,.08); color-scheme:dark}
+  --bg:#10171c; --surface:#1c262d; --ink:#e5ebee; --muted:#93a1a9; --line:#27333b; --accent:#7199ff; --accent-soft:#1a2547; --ok:#5ab583; --on-accent:#0b1220; --btn:#7199ff; --on-btn:#0b1220; --jeeny:#5ab583; --jeeny-soft:#183026; --prop:#7199ff; --prop-soft:#1a2547; --map:#151e24; --road:#1c262d; --phone:#2a3640; --inv-bg:#1c262d; --inv-fg:#e5ebee; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10171c; --surface:#1c262d; --ink:#e5ebee; --muted:#93a1a9; --line:#27333b; --accent:#7199ff; --accent-soft:#1a2547; --ok:#5ab583; --on-accent:#0b1220; --btn:#7199ff; --on-btn:#0b1220; --jeeny:#5ab583; --jeeny-soft:#183026; --prop:#7199ff; --prop-soft:#1a2547; --map:#151e24; --road:#1c262d; --phone:#2a3640; --inv-bg:#1c262d; --inv-fg:#e5ebee; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;margin:0}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.spot{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px circle at var(--mx,70%) var(--my,10%),var(--glow),transparent 70%)}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{text-wrap:balance;margin:0;letter-spacing:-.02em}
+h1,h2,h3{margin:0;text-wrap:balance;font-stretch:100%}
 p{margin:0}
-.wrap{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.eyebrow{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:500}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.skip{position:absolute;left:12px;top:-60px;z-index:30;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px}
+.skip:focus{top:12px}
+
+/* Type scale: 17 / 20 / 26 / 36 / 58 */
+h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.12;font-weight:650;letter-spacing:-.02em;max-width:24ch}
+h3{font-size:1.25rem;line-height:1.25;font-weight:600;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:58ch}
 
 /* Nav */
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600;font-size:.95rem}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600;text-decoration:none}
 .brand img{width:28px;height:28px;border-radius:50%;object-fit:cover}
-.brand:hover{text-decoration:none}
-nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.9rem}
-nav a{color:var(--muted)} nav a:hover{color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none} nav a:hover{color:var(--ink)}
 @media (max-width:760px){nav ul{display:none}}
-.btn{display:inline-flex;align-items:center;gap:8px;font:500 .9375rem/1 var(--f-body);padding:11px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.btn:hover{text-decoration:none;border-color:var(--muted)}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn.small{padding:8px 13px;font-size:.8125rem}
+.btn{display:inline-flex;align-items:center;font:500 .95rem/1 var(--f);padding:12px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--btn);color:var(--on-btn);border-color:var(--btn)}
+.btn.primary:hover{background:color-mix(in srgb,var(--btn) 85%,var(--on-btn));border-color:color-mix(in srgb,var(--btn) 85%,var(--on-btn))}
+.btn.small{padding:8px 13px;font-size:.85rem;border-radius:8px}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:80px 72px}
-@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);padding-block:48px}}
-.hero-main{display:grid;gap:24px;min-width:0}
-.me{display:flex;align-items:center;gap:14px}
-.me img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
-.me b{display:block;font-weight:600}
-.me span{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
-.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.75rem;background:var(--accent-soft);padding:5px 12px;border-radius:999px;justify-self:start;max-width:100%;line-height:1.4}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
-.hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1.04;font-weight:700;letter-spacing:-.035em}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .sub{font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);max-width:52ch}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:56px;align-items:center;padding-block:88px 56px}
+@media (max-width:860px){.hero{grid-template-columns:minmax(0,1fr);padding-block:48px 40px;gap:40px}}
+.hero-main{display:grid;gap:26px}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.who b{display:block;font-weight:600}
+.who span{color:var(--muted);font-size:.95rem}
+.hero h1{font-size:clamp(2.2rem,4.3vw,3.4rem);line-height:1.06;font-weight:700;letter-spacing:-.035em;text-wrap:wrap}
+.hero-main{container-type:inline-size}
+.hero h1{font-size:min(3.4rem,7.3cqi)}
+.hero h1 span{display:block;white-space:nowrap}
+.hero .lede{font-size:clamp(1.08rem,1.7vw,1.22rem)}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
-.hero-art svg{width:100%;height:auto;display:block;overflow:visible}
-.hero-art{margin:0;min-width:0}
-@media (max-width:900px){.hero-art{max-width:360px;margin-inline:auto;width:100%}}
-svg text{font-family:var(--f-mono);font-size:9px}
-.sl{stroke:var(--line)} .sa{stroke:var(--accent)} .so{stroke:var(--ok)} .st{stroke:var(--ink)} .sm{stroke:var(--muted)}
-.fa{fill:var(--accent)} .fas{fill:var(--accent-soft)} .fs{fill:var(--surface)} .fi{fill:var(--ink)} .fm{fill:var(--muted)}
-.loop{stroke-dasharray:5 5;animation:dash 2.4s linear infinite}
-@keyframes dash{to{stroke-dashoffset:-20}}
-@media (prefers-reduced-motion:reduce){.loop,.route{animation:none}}
+.avail{color:var(--muted);font-size:.95rem}
+.avail b{color:var(--ok);font-weight:600}
+.hero-phone{display:flex;justify-content:center}
+.hero-phone .phone{width:min(250px,52vw);--t:var(--jeeny);--ts:var(--jeeny-soft)}
+.trust{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding-block:24px 32px;border-top:2px solid var(--ink);color:var(--muted)}
+.trust b{color:var(--ink);font-weight:600}
 
-/* Project bands */
-.project{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:88px;border-top:1px solid var(--line)}
-.project.flip .phones{order:2}
-@media (max-width:900px){.project,.project.flip{grid-template-columns:minmax(0,1fr);gap:36px;padding-block:56px}.project.flip .phones{order:0}}
-.story{display:grid;gap:18px;min-width:0}
-.story h3{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.1;font-weight:650}
-.story .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
-.story p{color:var(--muted);max-width:56ch}
-.story p strong{color:var(--ink);font-weight:500}
-.call{border-left:2px solid var(--accent);padding:4px 0 4px 16px;display:grid;gap:4px}
-.call span{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
-.call p{color:var(--ink)}
-.outcomes{display:flex;flex-wrap:wrap;gap:8px}
-.outcomes span{font-size:.875rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.outcomes b{font-family:var(--f-mono);font-weight:500;color:var(--accent)}
-.proof{font-size:.8125rem;color:var(--faint)}
-
-/* Phones */
+/* Phones (illustrations) */
 .phones{display:flex;justify-content:center;align-items:flex-end;gap:16px;min-width:0}
-.phone{width:min(190px,30%);aspect-ratio:9/19.5;background:var(--phone);border-radius:30px;padding:7px;flex:none;box-shadow:0 30px 60px -30px rgba(17,21,28,.35)}
-.phone:nth-child(2){width:min(214px,34%);transform:translateY(-18px)}
-.screen{position:relative;width:100%;height:100%;border-radius:24px;overflow:hidden;background:var(--surface)}
-.screen::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:34%;height:12px;background:var(--phone);border-radius:999px;z-index:3}
-.screen img{width:100%;height:100%;object-fit:cover;display:block}
-.cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:3;font-family:var(--f-mono);font-size:.62rem;text-align:center;color:var(--muted);background:color-mix(in srgb,var(--surface) 88%,transparent);border-radius:8px;padding:4px}
-/* wireframe primitives */
+.phone{width:min(190px,30%);aspect-ratio:9/19.5;background:var(--phone);border-radius:32px;padding:7px;flex:none}
+.phones .phone:nth-child(2){width:min(214px,34%);transform:translateY(-18px)}
+.screen{position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden;background:var(--road)}
+.screen::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:34%;height:12px;background:var(--phone);border-radius:999px;z-index:3}
+.cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:3;font-size:.68rem;text-align:center;color:var(--muted);background:color-mix(in srgb,var(--surface) 90%,transparent);border-radius:8px;padding:4px}
 .map{position:absolute;inset:0;background:
   linear-gradient(90deg,transparent 46%,var(--road) 46% 54%,transparent 54%) 0 0/60px 100%,
-  linear-gradient(0deg,transparent 46%,var(--road) 46% 54%,transparent 54%) 0 0/100% 70px,
-  var(--map)}
+  linear-gradient(0deg,transparent 46%,var(--road) 46% 54%,transparent 54%) 0 0/100% 70px,var(--map)}
 .map svg{position:absolute;inset:0;width:100%;height:100%}
-.route{stroke-dasharray:6 5;animation:dash 2.4s linear infinite}
-.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--surface);border-radius:16px 16px 0 0;padding:14px 12px 34px;display:grid;gap:7px;box-shadow:0 -8px 20px -12px rgba(0,0,0,.25);z-index:2}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--surface);border-radius:16px 16px 0 0;padding:14px 12px 34px;display:grid;gap:7px;z-index:2;border-top:1px solid var(--line)}
 .ln{height:7px;border-radius:4px;background:var(--line)}
-.ln.w60{width:60%} .ln.w40{width:40%} .ln.w80{width:80%}
-.ln.ink{background:var(--muted);opacity:.55}
-.pill{height:24px;border-radius:12px;background:var(--accent)}
-.row{display:flex;gap:6px;align-items:center}
-.dot{width:20px;height:20px;border-radius:50%;background:var(--accent-soft);flex:none}
-.pad{position:absolute;inset:28px 10px 0;display:grid;gap:9px;align-content:start}
+.w40{width:40%}.w60{width:60%}.w80{width:80%}
+.ln.ink{background:var(--muted);opacity:.5}
+.pill{height:24px;border-radius:12px;background:var(--t)}
+.row{display:flex;gap:6px;align-items:center;min-width:0}
+.dot{width:20px;height:20px;border-radius:50%;background:var(--ts);flex:none}
+.pad{position:absolute;inset:30px 10px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:9px;align-content:start}
 .card{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;gap:5px;padding-bottom:8px}
-.card .img{height:56px;background:linear-gradient(135deg,var(--accent-soft),var(--map))}
+.card .img{aspect-ratio:2/1;background:var(--ts)}
 .card .ln{margin-inline:8px}
-.steps{display:flex;gap:4px}.steps i{flex:1;height:4px;border-radius:2px;background:var(--line)}.steps i.on{background:var(--accent)}
+.steps{display:flex;gap:4px}.steps i{flex:1;height:4px;border-radius:2px;background:var(--line)}.steps i.on{background:var(--t)}
 .field{height:26px;border:1px solid var(--line);border-radius:8px}
 .doc{height:60px;border:1.5px dashed var(--line);border-radius:10px}
-.chip{display:inline-block;height:18px;width:46px;border-radius:9px;background:var(--accent-soft)}
+.chip{display:block;height:18px;flex:0 1 46px;min-width:0;border-radius:9px;background:var(--ts)}
+.st-t{stroke:var(--t)} .f-t{fill:var(--t)} .f-s{fill:var(--surface)}
+.route{stroke-dasharray:6 5}
+.hero-phone .route{stroke-dasharray:none}
 
-/* AI + Lab */
-.section{padding-block:88px;border-top:1px solid var(--line);display:grid;gap:32px}
-@media (max-width:900px){.section{padding-block:56px}}
-.section h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.1;font-weight:650;max-width:22ch}
-.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-@media (max-width:800px){.three{grid-template-columns:minmax(0,1fr)}}
-.offers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
-.offer{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:10px;align-content:start;grid-column:span 2;min-width:0;transition:border-color .2s,transform .2s}
-.offer:hover{border-color:var(--accent)}
-.offer.main{grid-column:span 3}
-.offer.main h3{font-size:1.25rem}
-.offer .k{font-family:var(--f-mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
-.offer h3{font-size:1.05rem;font-weight:600}
-.offer p{color:var(--muted);font-size:.9375rem}
-.offer .for{font-size:.8125rem;color:var(--faint);border-top:1px solid var(--line);padding-top:10px}
-.offer a.go{font-weight:500;font-size:.9rem;justify-self:start}
-@media (max-width:900px){.offers{grid-template-columns:repeat(2,minmax(0,1fr))}.offer,.offer.main{grid-column:span 1}.offer:last-child{grid-column:span 2}}
-@media (max-width:600px){.offers{grid-template-columns:minmax(0,1fr)}.offer:last-child{grid-column:span 1}}
-.three article{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:8px;align-content:start}
-.three h3{font-size:1.05rem;font-weight:600}
-.three p{color:var(--muted);font-size:.9375rem}
-.three .k{font-family:var(--f-mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-family:var(--f-mono);font-size:.72rem;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:999px}
+/* Sections */
+.section{padding-block:96px;display:grid;gap:40px}
+.band{background:var(--surface)}
+.band > .wrap{display:grid;gap:40px}
+@media (max-width:860px){.section{padding-block:64px}}
+.head{display:grid;gap:14px}
 
-/* Path */
-.path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--line);gap:1px}
-.path div{background:var(--surface);padding:18px;display:grid;gap:4px;align-content:start}
-.path .y{font-family:var(--f-mono);font-size:.72rem;color:var(--faint)}
-.path b{font-weight:600}
-.path span{font-size:.875rem;color:var(--muted)}
-@media (max-width:640px){.path{grid-template-columns:minmax(0,1fr)}}
+/* Proof */
+.project{--t:var(--accent);--ts:var(--accent-soft);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.project + .project{padding-top:72px;border-top:1px solid var(--line)}
+.project.jeeny{--t:var(--jeeny);--ts:var(--jeeny-soft)}
+.project.prop{--t:var(--prop);--ts:var(--prop-soft)}
+.project.flip .phones{order:2}
+@media (max-width:860px){.project{grid-template-columns:minmax(0,1fr);gap:36px}.project.flip .phones{order:0}}
+.story{display:grid;gap:18px;min-width:0}
+.where{display:grid;gap:2px}
+.where b{color:var(--t);font-weight:600}
+.where span{color:var(--muted);font-size:.95rem}
+.story h3{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.12;font-weight:650;letter-spacing:-.02em}
+.story p{color:var(--muted);max-width:58ch}
+.story p strong{color:var(--ink);font-weight:550}
+.call{border-left:3px solid var(--t);padding:2px 0 2px 18px;display:grid;gap:6px}
+.call h4{margin:0;font-size:1rem;font-weight:600;color:var(--ink)}
+.story .call p{color:var(--ink)}
+.results{display:flex;flex-wrap:wrap;gap:12px 36px;padding-top:6px}
+.results div{display:grid}
+.results b{font-size:1.6rem;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.2}
+.results span{font-size:.9rem;color:var(--muted)}
+.note{font-size:.875rem;color:var(--muted)}
 
-/* Values + process */
-.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-@media (max-width:900px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.values{grid-template-columns:minmax(0,1fr)}}
-.values article{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:10px;align-content:start;grid-template-rows:auto 1fr auto}
-.values h3{font-size:1.1rem;font-weight:600}
-.values p{color:var(--muted);font-size:.9375rem}
-.values .pf{font-size:.8125rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
-.values .pf b{font-family:var(--f-mono);font-weight:500;color:var(--accent)}
-.proof-head{display:grid;gap:12px;padding-top:88px}
-.proof-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.1;font-weight:650}
-.proof-head + .project{border-top:0;padding-top:48px}
-@media (max-width:900px){.proof-head{padding-top:56px}}
-ol.steps-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:none}
-@media (max-width:900px){ol.steps-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){ol.steps-row{grid-template-columns:minmax(0,1fr)}}
-ol.steps-row li{display:grid;gap:8px;align-content:start;padding-top:16px;border-top:2px solid var(--line)}
-ol.steps-row li:first-child{border-top-color:var(--accent)}
-ol.steps-row span{font-family:var(--f-mono);font-size:.8125rem;color:var(--accent)}
-ol.steps-row h3{font-size:1.05rem;font-weight:600}
-ol.steps-row p{color:var(--muted);font-size:.9375rem}
-/* Bento: what I bring */
-.bento2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.vc{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:6px;align-content:start;min-width:0;transition:transform .25s,box-shadow .25s,border-color .25s}
-.vc:hover,.po:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(17,21,28,.35);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
-.vtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.ic{width:34px;height:34px;padding:7px;border-radius:10px;background:var(--accent-soft);color:var(--accent)}
-.tag{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-.num{font-family:var(--f-body);font-weight:700;font-size:clamp(1.45rem,2.3vw,1.85rem);letter-spacing:-.03em;line-height:1.08;color:var(--ink);margin-bottom:6px;text-wrap:balance}
-.unit{font-size:.8125rem;color:var(--muted);margin-bottom:10px}
-.vc h3{font-size:1.02rem;font-weight:600}
-.vc p{color:var(--muted);font-size:.9rem;line-height:1.5}
-.vc.big{grid-column:span 2;grid-row:span 2;padding:28px;padding-bottom:110px}
-.vc.big .num{font-size:clamp(2.6rem,5.4vw,4.2rem);color:var(--accent)}
-.vc.big h3{font-size:1.3rem}
-.vc.big p{font-size:1.05rem;max-width:38ch}
-.deco{position:absolute;left:0;right:0;bottom:0;width:100%;height:90px}
-@media (max-width:900px){.bento2{grid-template-columns:repeat(2,minmax(0,1fr))}.vc.big{grid-row:auto}}
-@media (max-width:560px){.bento2{grid-template-columns:minmax(0,1fr)}.vc.big{grid-column:auto}}
+/* AI (from B) */
+.ai{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+@media (max-width:900px){.ai{grid-template-columns:minmax(0,1fr);gap:32px}}
+.ai .head{position:sticky;top:96px}
+@media (max-width:900px){.ai .head{position:static}}
+.points{display:grid;gap:0}
+.points div{display:grid;gap:6px;padding-block:24px;border-top:2px solid var(--ink)}
+.points h3{font-size:1.2rem}
+.points div:last-child{border-bottom:2px solid var(--ink)}
+.points p{color:var(--muted)}
+.tools{color:var(--muted);font-size:.98rem}
+.tools b{color:var(--ink);font-weight:600}
+
+/* Quotes */
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
+@media (max-width:760px){.quotes{grid-template-columns:minmax(0,1fr);gap:32px}}
+.quote{margin:0;display:grid;gap:14px;align-content:start;padding-top:20px;border-top:2px solid var(--ink)}
+.quote blockquote{margin:0}
+.quote p{font-size:1.08rem;line-height:1.55}
+.quote figcaption b{display:block;font-weight:600}
+.quote figcaption span{font-size:.9rem;color:var(--muted)}
+.src{font-size:.9rem;color:var(--muted)}
 
 /* Work with me */
-.offers2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-@media (max-width:760px){.offers2{grid-template-columns:minmax(0,1fr)}}
-.po{border-radius:22px;padding:28px;display:grid;gap:12px;align-content:start;text-decoration:none;border:1px solid transparent;transition:transform .25s,box-shadow .25s}
-.po:hover{text-decoration:none}
-.po h3{font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.15;font-weight:650;letter-spacing:-.02em}
-.po p{font-size:.98rem}
-.po.ink{background:var(--inv-bg);color:var(--inv-fg)}
-.po.ink p{color:color-mix(in srgb,var(--inv-fg) 72%,var(--inv-bg))}
-.po.ink .tag{color:color-mix(in srgb,var(--inv-fg) 60%,var(--inv-bg))}
-.po.ink .ic{background:color-mix(in srgb,var(--inv-fg) 12%,var(--inv-bg));color:var(--inv-fg)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.chips span{font-family:var(--f-mono);font-size:.72rem;padding:5px 10px;border-radius:999px;border:1px solid currentColor;opacity:.85}
-.cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;margin-top:8px}
-.cta .ar{width:18px;height:18px;transition:transform .2s}
-.po:hover .cta .ar{transform:translateX(4px)}
-.svc-head{margin-top:16px}
-ul.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-ul.svc a{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:18px;align-items:center;padding:20px 8px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;transition:background .2s,padding .2s}
-ul.svc a:hover{background:var(--surface);padding-inline:16px}
-.si .ic{width:42px;height:42px;padding:9px}
-.st{display:grid;gap:2px;min-width:0}
-.st b{font-weight:600;font-size:1.05rem}
-.st span{color:var(--muted);font-size:.9rem}
-.sf{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;text-align:right}
-ul.svc .go{width:20px;height:20px;color:var(--accent);transition:transform .2s}
-ul.svc a:hover .go{transform:translateX(4px)}
-@media (max-width:700px){ul.svc a{grid-template-columns:auto minmax(0,1fr) auto}.sf{display:none}}
-@media (prefers-reduced-motion:reduce){.vc,.po,ul.svc a,.cta .ar,ul.svc .go{transition:none}.vc:hover,.po:hover{transform:none}}
-/* Trust line + case studies */
-.trust{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-top:28px;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
-.trust b{color:var(--ink);font-weight:600}
-.trust i{font-style:normal;color:var(--faint)}
-.trust-link{margin-left:auto;font-weight:500}
-@media (max-width:600px){.trust-link{margin-left:0;flex-basis:100%}}
-.skip{position:absolute;left:12px;top:-60px;z-index:30;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;font-weight:500}
-main:focus{outline:none}
-.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
-/* Quotes */
-.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:760px){.quotes{grid-template-columns:minmax(0,1fr)}}
-.quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;display:grid;gap:18px;align-content:space-between;position:relative}
-.quote::before{content:"\201C";position:absolute;top:6px;right:22px;font-size:4.5rem;line-height:1;font-weight:700;color:var(--accent-soft)}
-.quote blockquote{margin:0}
-.quote p{font-size:1.02rem;line-height:1.6;color:var(--ink);position:relative}
-.quote figcaption{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
-.quote figcaption b{font-weight:600}
-.quote figcaption span{font-size:.85rem;color:var(--muted)}
-.qsrc{font-size:.875rem;color:var(--muted)}
-/* Contact */
-.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
-@media (max-width:960px){.contact{grid-template-columns:minmax(0,1fr)}}
-.clist{display:grid;border-top:1px solid var(--line)}
-.crow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding-block:14px;border-bottom:1px solid var(--line)}
-.crow .k{font-family:var(--f-mono);font-size:.72rem;color:var(--faint);width:76px;text-transform:uppercase;letter-spacing:.08em}
-.crow .v a{display:inline-block;padding-block:4px}
-.crow .v{flex:1;min-width:0;font-weight:500;overflow-wrap:break-word}
-@media (max-width:600px){.crow .k{width:100%}}
-footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.8125rem;color:var(--faint);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.8125rem;padding:9px 14px;border-radius:999px;z-index:20}
+.offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.offers{grid-template-columns:minmax(0,1fr)}}
+.offer{border-radius:18px;padding:30px;display:grid;gap:12px;align-content:start;background:var(--surface);border:1px solid var(--line)}
+.offer.ink{background:var(--inv-bg);color:var(--inv-fg);border-color:var(--inv-bg)}
+.offer.ink p,.offer.ink .kind{color:color-mix(in srgb,var(--inv-fg) 70%,var(--inv-bg))}
+.offer .kind{font-weight:500;color:var(--muted)}
+.offer h3{font-size:clamp(1.3rem,2.3vw,1.6rem);line-height:1.18;font-weight:650;letter-spacing:-.02em}
+.offer ul{margin:4px 0 0;padding-left:1.1em;display:grid;gap:2px;font-size:.95rem}
+.offer.ink ul{color:color-mix(in srgb,var(--inv-fg) 85%,var(--inv-bg))}
+.offer .btn{justify-self:start;margin-top:8px}
+.offer.ink .btn{background:var(--inv-fg);color:var(--inv-bg);border-color:var(--inv-fg)}
+.problems h3{margin-bottom:12px}
+.problems ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.problems ul li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,14rem);gap:4px 24px;padding-block:18px;border-bottom:1px solid var(--line)}
+.problems ul li b{font-weight:600;display:block}
+.problems ul li p{color:var(--muted);font-size:.95rem}
+.problems ul li .for{color:var(--muted);font-size:.9rem;text-align:right;align-self:center}
+@media (max-width:640px){.problems ul li{grid-template-columns:minmax(0,1fr)}.problems ul li .for{text-align:left}}
+/* Process: four stops on a line, because it is a sequence */
+ol.legs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;position:relative}
+ol.legs::before{content:"";position:absolute;left:11px;right:calc((100% - 72px)/4 - 12px);top:9px;height:6px;border-radius:3px;background:var(--accent)}
+ol.legs li{position:relative;display:grid;gap:6px;align-content:start;padding-top:40px}
+ol.legs li::before{content:"";position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--surface);border:5px solid var(--accent);box-sizing:border-box}
+ol.legs li:last-child::before{background:var(--accent)}
+ol.legs b{font-size:1.1rem;font-weight:800}
+ol.legs p{color:var(--muted)}
+@media (max-width:760px){
+  ol.legs{grid-template-columns:minmax(0,1fr);gap:28px;padding-left:44px}
+  ol.legs::before{left:9px;right:auto;top:11px;bottom:11px;width:6px;height:auto}
+  ol.legs li{padding-top:0}
+  ol.legs li::before{left:-44px}
+}
+
+/* Contact (layout from B, email scaled down) */
+.contact{display:grid;gap:28px}
+.mail{justify-self:start;display:inline-block;white-space:nowrap;color:var(--ink);font-size:clamp(1.4rem,4vw,2.6rem);font-weight:650;letter-spacing:-.02em;line-height:1.1;text-decoration:none;text-underline-offset:.14em;text-decoration-thickness:.06em;transition:color .15s}
+.mail:hover,.mail:focus-visible{color:var(--accent);text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.mail{transition:none}}
+.clist{display:flex;flex-wrap:wrap;gap:10px}
+.clist .btn{background:color-mix(in srgb,var(--ink) 12%,var(--bg));border:1px solid color-mix(in srgb,var(--ink) 40%,var(--bg));color:var(--ink);font-weight:600;transition:background .15s,border-color .15s}
+.clist .btn:hover{background:color-mix(in srgb,var(--ink) 20%,var(--bg));border-color:var(--ink);color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.clist .btn{transition:none}}
+footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.85rem;padding:9px 14px;border-radius:10px;z-index:20}
 </style>
 <link rel="canonical" href="https://usmaniverse.online/">
-<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0c0f14" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232457d6'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EUJ%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#eceee8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10171c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2334509e'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EUJ%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="photo.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://usmaniverse.online/">
-<meta property="og:title" content="Muhammad Usman Javed · Senior iOS Engineer">
-<meta property="og:description" content="From idea to App Store, built right and shipped faster with AI. Full-time and contract.">
+<meta property="og:title" content="Muhammad Usman Javed, Senior iOS Engineer">
+<meta property="og:description" content="From idea to App Store, built right and shipped faster. Full-time and contract.">
 <meta property="og:image" content="https://usmaniverse.online/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Muhammad Usman Javed, Senior iOS Engineer: From idea to App Store, built right and shipped faster with AI.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://usmaniverse.online/og-image.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Usman Javed","jobTitle":"Senior iOS Engineer","url":"https://usmaniverse.online/","image":"https://usmaniverse.online/photo.jpg","email":"mailto:usmaniverse@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Lahore","addressCountry":"PK"},"sameAs":["https://www.linkedin.com/in/usmaniverse","https://github.com/usmaniverse"],"knowsAbout":["iOS","Swift","SwiftUI","UIKit","AI-assisted development"]}</script>
-<!-- Umami analytics (cloud.umami.is) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="a18f1d74-d3fa-45da-9674-649029d2e302" data-domains="usmaniverse.online"></script>
 </head>
 <body>
-
-
-<a class="skip" href="#top">Skip to content</a>
-<div class="spot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="photo.jpg" alt="" width="28" height="28">Usman Javed</a>
+    <a class="brand" href="#main"><img src="photo.jpg" alt="" width="28" height="28">Usman Javed</a>
     <nav aria-label="Sections"><ul>
-      <li><a href="#bring">What I bring</a></li>
+      <li><a href="#proof">Work</a></li>
       <li><a href="#ai">AI</a></li>
-      <li><a href="#proof">Proof</a></li>
       <li><a href="#work-with-me">Services</a></li>
-      <li><a href="#process">How we'd work</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul></nav>
     <a data-umami-event="Let's talk (nav)" class="btn small primary" href="#contact">Let's talk</a>
   </div>
 </header>
 
-<main id="top" tabindex="-1">
+<main id="main" tabindex="-1">
   <div class="wrap">
     <section class="hero" aria-labelledby="hero-h">
       <div class="hero-main">
-        <div class="me">
-          <img src="photo.jpg" width="64" height="64" alt="Portrait of Muhammad Usman Javed">
-          <div><b>Muhammad Usman Javed</b><span>Senior iOS Engineer · Lahore · UTC+5</span></div>
+        <div class="who">
+          <img src="photo.jpg" width="56" height="56" alt="Portrait of Muhammad Usman Javed">
+          <div><b>Muhammad Usman Javed</b><span>Senior iOS Engineer in Lahore</span></div>
         </div>
-        <span class="status"><i aria-hidden="true"></i>Available for full-time and contract work · remote or relocation</span>
-        <h1 id="hero-h">From idea to <em>App Store</em>, built right and shipped faster with AI.</h1>
-        <p class="sub">I help companies and founders build, modernize and scale their iPhone apps, and set their teams up to ship with AI coding agents. Hands-on in Swift, SwiftUI and UIKit, with the experience to lead.</p>
+        <h1 id="hero-h"><span class="ln1">From idea to App&nbsp;Store,</span> <span class="ln2">built right and shipped faster.</span></h1>
+        <p class="lede">I help companies and founders build, modernize and scale their iPhone apps, and set their teams up to ship with AI coding agents. Hands-on in Swift, SwiftUI and UIKit, with the experience to lead.</p>
         <div class="actions">
-          <a data-umami-event="Hero: What I can bring" class="btn primary" href="#bring">What I can bring</a>
+          <a data-umami-event="Hero: See the work" class="btn primary" href="#proof">See the work</a>
           <a data-umami-event="Hero: Start a conversation" class="btn" href="#contact">Start a conversation</a>
         </div>
+        <p class="avail"><b>Available now</b> for full-time and contract work, remote or with relocation.</p>
       </div>
-      <figure class="hero-art">
-        <svg viewBox="0 0 320 240" role="img" aria-label="AI agent workflow loop: agent opens a change, CI runs lint and tests, an engineer reviews, then it merges and ships">
-          <circle cx="160" cy="120" r="78" class="sl" stroke-width="2" fill="none"/>
-          <circle cx="160" cy="120" r="78" class="sa loop" stroke-width="2" fill="none"/>
-          <circle cx="160" cy="42" r="20" class="fa"/><text x="160" y="45" class="fs" text-anchor="middle">AGENT</text>
-          <circle cx="234" cy="96" r="18" class="fs sa" stroke-width="2"/><text x="234" y="99" class="fi" text-anchor="middle">PR</text>
-          <circle cx="206" cy="184" r="18" class="fs so" stroke-width="2"/><path d="M198 184l6 6 10-12" class="so" stroke-width="2.5" fill="none"/>
-          <circle cx="114" cy="184" r="18" class="fs st" stroke-width="2"/><circle cx="114" cy="179" r="5" class="fi"/><path d="M104 194c2-7 18-7 20 0" class="st" stroke-width="2" fill="none"/>
-          <circle cx="86" cy="96" r="18" class="fs sl" stroke-width="2"/><path d="M80 90v12M80 96c8 0 12-4 12-6" class="sm" stroke-width="2" fill="none"/><circle cx="80" cy="88" r="2.5" class="fm"/><circle cx="92" cy="88" r="2.5" class="fm"/>
-          <text x="256" y="80" class="fm">open change</text>
-          <text x="226" y="214" class="fm">CI: lint + tests</text>
-          <text x="58" y="214" class="fm">human review</text>
-          <text x="18" y="80" class="fm">merge</text>
-          <text x="160" y="124" class="fi" text-anchor="middle" style="font-size:11px">ship</text>
-        </svg>
-      </figure>
-      <div class="trust">
-        <span>Built and scaled apps for</span><b>Jeeny</b><i aria-hidden="true">·</i><b>Zameen.com</b><i aria-hidden="true">·</i><b>Bayut.com</b>
-        <a data-umami-event="Hero: See the proof" href="#proof" class="trust-link">See the proof ↓</a>
+      <div class="hero-phone" role="img" aria-label="Illustration of a ride-tracking screen on an iPhone">
+        <div class="phone"><div class="screen">
+          <div class="map"><svg viewBox="0 0 100 216" preserveAspectRatio="none" aria-hidden="true">
+            <path class="st-t route" d="M22 150 C 30 120, 60 120, 58 92 S 70 60, 78 44" fill="none" stroke-width="2.6" vector-effect="non-scaling-stroke"/>
+            <circle cx="22" cy="150" r="4" class="f-s st-t" stroke-width="2" vector-effect="non-scaling-stroke"/>
+            <circle cx="78" cy="44" r="4" class="f-t"/></svg></div>
+          <div class="sheet"><div class="row"><span class="dot"></span><div style="flex:1;display:grid;gap:5px"><div class="ln ink w60"></div><div class="ln w40"></div></div></div><div class="pill"></div></div>
+        </div></div>
       </div>
     </section>
+    <div class="trust">
+      <span>Built and scaled apps for <b>Jeeny</b>, <b>Zameen.com</b> and <b>Bayut.com</b>.</span>
+      <a data-umami-event="Hero: See the proof" href="#proof">Read the case studies</a>
+    </div>
   </div>
 
-  <!-- WHAT I BRING -->
-  <section class="section wrap" id="bring" aria-labelledby="bring-h">
-    <span class="eyebrow">What I bring</span>
-    <h2 id="bring-h">What changes when I join your app or your team</h2>
-    <div class="bento2">
-      <article class="vc big">
-        <div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg><span class="tag">Scale</span></div>
-        <div class="num">Built to grow</div>
-        <p>Architecture, tests and monitoring that keep your app fast and stable as your users grow, from the first thousand to the first million.</p>
-        <svg class="deco" viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 C 40 78, 60 60, 100 58 S 160 40, 200 30 S 260 12, 300 8 L300 90 L0 90Z" class="fas"/><path d="M0 80 C 40 78, 60 60, 100 58 S 160 40, 200 30 S 260 12, 300 8" fill="none" class="sa" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
-      </article>
-      <article class="vc"><div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 12l5-3"/><path d="M21 21l-3-3"/></svg><span class="tag">Delivery</span></div><div class="num">Ship every sprint</div><p>Planning, CI gates and release checks that make shipping routine, not risky.</p></article>
-      <article class="vc"><div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg><span class="tag">Modernize</span></div><div class="num">No more legacy</div><p>Old Objective-C and UIKit moved to modern Swift and SwiftUI, without pausing releases.</p></article>
-      <article class="vc"><div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span class="tag">Polish</span></div><div class="num">Feels native</div><p>Interfaces built to Apple's guidelines, side by side with your designers.</p></article>
-      <article class="vc"><div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/></svg><span class="tag">Team</span></div><div class="num">Stronger team</div><p>Review standards, mentoring and shared components that lift every engineer around me.</p></article>
-    </div>
-  </section>
-
-  <!-- HOW I BUILD -->
-  <section class="section wrap" id="ai" aria-labelledby="ai-h">
-    <span class="eyebrow">How I build now</span>
-    <h2 id="ai-h">AI agents speed up how I build. Engineering still decides what ships.</h2>
-    <div class="three">
-      <article><span class="k">Speed</span><h3>Migrations with agents</h3><p>At Jeeny I used AI tools to drive the Objective-C → Swift migration and the move from nested callbacks to async/await.</p></article>
-      <article><span class="k">Safety</span><h3>Agents with guardrails</h3><p>Agents open the change, CI runs SwiftLint and the tests on every pull request, and an engineer reviews before merge. Secrets and user data stay out of prompts.</p></article>
-      <article><span class="k">Team</span><h3>An AI-fluent team</h3><p>I write the instructions agents work from, keep component docs AI-ready, connect tools through MCP, and mentor engineers on AI-assisted development.</p></article>
-    </div>
-    <div class="tags"><span>Claude Code</span><span>Cursor</span><span>GitHub Copilot</span><span>Google AI Studio</span><span>MCP</span><span>Google AI Professional Certificate</span></div>
-  </section>
-
   <!-- PROOF -->
-  <div class="wrap">
-    <div class="proof-head" id="proof"><span class="eyebrow">Proof</span><h2>Where I've done it before</h2></div>
-    <!-- JEENY -->
-    <section class="project" id="jeeny" aria-labelledby="jeeny-h">
+  <section class="section band" id="proof" aria-labelledby="proof-h"><div class="wrap">
+    <div class="head"><h2 id="proof-h">Where I've done it before</h2></div>
+
+    <article class="project jeeny" aria-labelledby="jeeny-h">
       <div class="phones" role="img" aria-label="Illustrated Jeeny screens: driver onboarding, live ride tracking, wallet">
         <div class="phone"><div class="screen">
           <div class="pad"><div class="steps"><i class="on"></i><i class="on"></i><i></i><i></i></div><div class="ln ink w60"></div><div class="field"></div><div class="field"></div><div class="doc"></div><div class="doc"></div><div class="pill"></div></div>
@@ -376,127 +280,136 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.8125r
         </div></div>
         <div class="phone"><div class="screen">
           <div class="map"><svg viewBox="0 0 100 216" preserveAspectRatio="none" aria-hidden="true">
-            <path class="sa route" d="M22 150 C 30 120, 60 120, 58 92 S 70 60, 78 44" fill="none" stroke-width="2.4" vector-effect="non-scaling-stroke"/>
-            <circle cx="22" cy="150" r="4" class="fs sa" stroke-width="2" vector-effect="non-scaling-stroke"/>
-            <circle cx="78" cy="44" r="4" class="fa"/></svg></div>
+            <path class="st-t route" d="M22 150 C 30 120, 60 120, 58 92 S 70 60, 78 44" fill="none" stroke-width="2.4" vector-effect="non-scaling-stroke"/>
+            <circle cx="22" cy="150" r="4" class="f-s st-t" stroke-width="2" vector-effect="non-scaling-stroke"/>
+            <circle cx="78" cy="44" r="4" class="f-t"/></svg></div>
           <div class="sheet"><div class="row"><span class="dot"></span><div style="flex:1;display:grid;gap:5px"><div class="ln ink w60"></div><div class="ln w40"></div></div></div><div class="pill"></div></div>
-          <span class="cap" style="bottom:auto;top:26px">Live ride tracking</span>
+          <span class="cap" style="bottom:auto;top:28px">Live ride tracking</span>
         </div></div>
         <div class="phone"><div class="screen">
-          <div class="pad"><div class="ln ink w40"></div><div class="card" style="padding:12px 8px;background:var(--accent-soft);border:0"><div class="ln ink w40" style="margin:0"></div><div class="ln w60" style="margin:0;height:14px;background:var(--accent)"></div></div>
+          <div class="pad"><div class="ln ink w40"></div><div class="card" style="padding:12px 8px;background:var(--ts);border:0"><div class="ln ink w40" style="margin:0"></div><div class="ln w60" style="margin:0;height:14px;background:var(--t)"></div></div>
           <div class="row"><span class="dot"></span><div class="ln w80" style="flex:1"></div></div><div class="row"><span class="dot"></span><div class="ln w60" style="flex:1"></div></div><div class="row"><span class="dot"></span><div class="ln w80" style="flex:1"></div></div><div class="row"><span class="dot"></span><div class="ln w40" style="flex:1"></div></div></div>
-          <span class="cap">Wallet &amp; payments</span>
+          <span class="cap">Wallet and payments</span>
         </div></div>
       </div>
       <div class="story">
-        <div class="meta"><span>Jeeny</span><span>Ride-hailing · Saudi Arabia &amp; Jordan</span></div>
+        <div class="where"><b>Jeeny</b><span>Ride-hailing in Saudi Arabia and Jordan</span></div>
         <h3 id="jeeny-h">Rebuilding a ride-hailing app without stopping it</h3>
         <p>Jeeny's rider and driver apps ran on a legacy <strong>Objective-C/MVC</strong> codebase, in two markets, at about a million ride requests a day. Every feature was slow to build, and the business couldn't pause releases for a rewrite.</p>
-        <div class="call"><span>The hard call</span><p>No big-bang rewrite. We moved to Swift and MVVM one module at a time, so every release still went out. New features went straight to SwiftUI, and older UIKit screens were bridged in, then rewritten where it paid off.</p></div>
+        <div class="call"><h4>The hard call</h4><p>No big-bang rewrite. We moved to Swift and MVVM one module at a time, so every release still went out. New features went straight to SwiftUI, and older UIKit screens were bridged in, then rewritten where it paid off.</p></div>
         <p>The modules became a platform: a <strong>shared UI kit</strong> with Figma design tokens, and map, payment and networking modules reused by both apps. I then took on delivery for the whole squad across iOS, Android, backend and QA, and grew the iOS team from 5 to 15.</p>
-        <div class="outcomes"><span><b>~30%</b> faster feature builds</span><span><b>−35%</b> P1/P2 incidents</span></div>
-        <p class="proof">Jeeny today: rated 4.7 on the App Store from about 291K ratings.</p>
+        <div class="results"><div><b>~30%</b><span>faster feature builds</span></div><div><b>−35%</b><span>P1/P2 incidents</span></div><div><b>4.7</b><span>App Store rating today, ~291K ratings</span></div></div>
       </div>
-    </section>
+    </article>
 
-    <!-- ZAMEEN / BAYUT -->
-    <section class="project flip" id="portals" aria-labelledby="portals-h">
+    <article class="project prop flip" aria-labelledby="portals-h">
       <div class="phones" role="img" aria-label="Illustrated property app screens: search, listing detail, map search">
         <div class="phone"><div class="screen">
           <div class="pad"><div class="field"></div><div class="row"><span class="chip"></span><span class="chip"></span><span class="chip"></span></div>
           <div class="card"><div class="img"></div><div class="ln ink w60"></div><div class="ln w40"></div></div>
           <div class="card"><div class="img"></div><div class="ln ink w80"></div><div class="ln w40"></div></div></div>
-          <span class="cap">Search &amp; filters</span>
+          <span class="cap">Search and filters</span>
         </div></div>
         <div class="phone"><div class="screen">
-          <div class="pad" style="inset:0;gap:8px"><div style="height:42%;background:linear-gradient(160deg,var(--accent-soft),var(--map))"></div>
+          <div class="pad" style="inset:0;gap:8px;grid-template-rows:42% auto"><div style="background:var(--ts)"></div>
           <div style="display:grid;gap:8px;padding:0 10px"><div class="ln ink w80" style="height:10px"></div><div class="ln w40"></div><div class="row"><span class="chip"></span><span class="chip"></span></div><div class="ln w80"></div><div class="ln w60"></div><div class="ln w80"></div><div class="pill" style="margin-top:6px"></div></div></div>
-          <span class="cap" style="bottom:auto;top:26px">Listing detail</span>
+          <span class="cap" style="bottom:auto;top:28px">Listing detail</span>
         </div></div>
         <div class="phone"><div class="screen">
           <div class="map"><svg viewBox="0 0 100 216" preserveAspectRatio="none" aria-hidden="true">
-            <g class="fa"><circle cx="30" cy="60" r="5"/><circle cx="70" cy="80" r="5"/><circle cx="45" cy="120" r="5"/><circle cx="75" cy="150" r="5"/><circle cx="25" cy="170" r="5"/></g></svg></div>
+            <g class="f-t"><circle cx="30" cy="60" r="5"/><circle cx="70" cy="80" r="5"/><circle cx="45" cy="120" r="5"/><circle cx="75" cy="150" r="5"/><circle cx="25" cy="170" r="5"/></g></svg></div>
           <span class="cap">Map search</span>
         </div></div>
       </div>
       <div class="story">
-        <div class="meta"><span>Zameen &amp; Bayut</span><span>Property portals · Pakistan &amp; UAE</span></div>
-        <h3 id="portals-h">Zameen.com and Bayut.com: two portals, one modern codebase</h3>
+        <div class="where"><b>Zameen.com and Bayut.com</b><span>Property portals in Pakistan and the UAE</span></div>
+        <h3 id="portals-h">Two portals, one modern codebase</h3>
         <p>Zameen and Bayut are leading property portals in Pakistan and the UAE. Both iOS apps were <strong>Objective-C monoliths</strong>, and teams kept blocking each other on every release.</p>
-        <div class="call"><span>The hard call</span><p>Split the monolith before redesigning anything. We moved both apps to Swift and VIP Clean Architecture with CocoaPods modules, so teams could ship their areas independently.</p></div>
+        <div class="call"><h4>The hard call</h4><p>Split the monolith before redesigning anything. We moved both apps to Swift and VIP Clean Architecture with CocoaPods modules, so teams could ship their areas independently.</p></div>
         <p>With that in place, I led the redesign of both apps to Apple's Human Interface Guidelines with Product and Design, and mentored junior engineers through the move to Swift.</p>
-        <div class="outcomes"><span><b>3.9 → 4.5</b> App Store rating</span><span><b>~20%</b> more engagement</span></div>
+        <div class="results"><div><b>3.9 to 4.5</b><span>App Store rating</span></div><div><b>~20%</b><span>more engagement</span></div></div>
       </div>
-    </section>
-  </div>
+    </article>
+  </div></section>
+
+  <!-- AI -->
+  <section class="section wrap" id="ai" aria-labelledby="ai-h">
+    <div class="ai">
+      <div class="head">
+        <h2 id="ai-h">AI agents speed up how I build. Engineering still decides what ships.</h2>
+        <p class="tools">Daily tools: <b>Claude Code, Cursor, GitHub Copilot, Google AI Studio and MCP</b>. Google AI Professional Certificate.</p>
+      </div>
+      <div class="points">
+        <div><h3>Migrations with agents</h3><p>At Jeeny I used AI tools to drive the Objective-C to Swift migration and the move from nested callbacks to async/await.</p></div>
+        <div><h3>Agents with guardrails</h3><p>Agents open the change, CI runs SwiftLint and the tests on every pull request, and an engineer reviews before merge. Secrets and user data stay out of prompts.</p></div>
+        <div><h3>An AI-fluent team</h3><p>I write the instructions agents work from, keep component docs AI-ready, connect tools through MCP, and mentor engineers on AI-assisted development.</p></div>
+        <div><h3>Native, stable, and built to grow</h3><p>Under the speed, the same standards: architecture and tests that hold up as users grow, interfaces built to Apple's guidelines with your designers, and review habits that lift the whole team.</p></div>
+      </div>
+    </div>
+  </section>
 
   <!-- QUOTES -->
-  <section class="section wrap" id="quotes" aria-labelledby="quotes-h">
-    <span class="eyebrow">What people say</span>
-    <h2 id="quotes-h">From the people I've built with</h2>
+  <section class="section band" id="quotes" aria-labelledby="quotes-h"><div class="wrap">
+    <div class="head"><h2 id="quotes-h">From the people I've built with</h2></div>
     <div class="quotes">
-      <figure class="quote"><blockquote><p>He successfully led the revamping of the Passenger app, demonstrating exceptional skills, expertise, and leadership throughout the project. … Under his leadership, the project was completed within the deadline, resulting in a successful adoption.</p></blockquote><figcaption><b>Saira Liaqat</b><span>Software Engineer · worked with Usman at Jeeny</span></figcaption></figure>
-      <figure class="quote"><blockquote><p>His skills in iOS development are exceptional, and I am consistently impressed by his meticulous attention to detail. … Usman encourages innovative and efficient solutions, and he provides valuable feedback by discussing and refining these ideas with the team.</p></blockquote><figcaption><b>Hassam Ali</b><span>Senior iOS Developer · reported to Usman at Jeeny</span></figcaption></figure>
-      <figure class="quote"><blockquote><p>Usman has an exceptional ability to understand complex requirements and turn them into elegant and functional solutions.</p></blockquote><figcaption><b>Kanaan Zafar</b><span>Senior iOS Engineer · worked on the same team</span></figcaption></figure>
-      <figure class="quote"><blockquote><p>Usman's ability to lead by example and take initiative in challenging situations greatly contributed to the Jeeny's success.</p></blockquote><figcaption><b>Mawish Jamshaid Iqbal</b><span>Senior colleague at Jeeny</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>“He successfully led the revamping of the Passenger app, demonstrating exceptional skills, expertise, and leadership throughout the project. … Under his leadership, the project was completed within the deadline, resulting in a successful adoption.”</p></blockquote><figcaption><b>Saira Liaqat</b><span>Software Engineer, worked with Usman at Jeeny</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>“His skills in iOS development are exceptional, and I am consistently impressed by his meticulous attention to detail. … Usman encourages innovative and efficient solutions, and he provides valuable feedback by discussing and refining these ideas with the team.”</p></blockquote><figcaption><b>Hassam Ali</b><span>Senior iOS Developer, reported to Usman at Jeeny</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>“Usman has an exceptional ability to understand complex requirements and turn them into elegant and functional solutions.”</p></blockquote><figcaption><b>Kanaan Zafar</b><span>Senior iOS Engineer, worked on the same team</span></figcaption></figure>
+      <figure class="quote"><blockquote><p>“Usman's ability to lead by example and take initiative in challenging situations greatly contributed to the Jeeny's success.”</p></blockquote><figcaption><b>Mawish Jamshaid Iqbal</b><span>Senior colleague at Jeeny</span></figcaption></figure>
     </div>
-    <p class="qsrc">From recommendations on <a href="https://www.linkedin.com/in/usmaniverse/details/recommendations/" target="_blank" rel="noopener" data-umami-event="Quotes: LinkedIn recommendations">my LinkedIn profile ↗</a></p>
-  </section>
+    <p class="src">From recommendations on <a href="https://www.linkedin.com/in/usmaniverse/details/recommendations/" target="_blank" rel="noopener" data-umami-event="Quotes: LinkedIn recommendations">my LinkedIn profile</a>.</p>
+  </div></section>
 
   <!-- WORK WITH ME -->
   <section class="section wrap" id="work-with-me" aria-labelledby="wwm-h">
-    <span class="eyebrow">Work with me</span>
-    <h2 id="wwm-h">Hire me full-time, bring me in on contract, or hand me a specific problem.</h2>
-    <div class="offers2">
-      <a class="po ink" href="#contact" data-umami-event="Service: Full-time">
-        <div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg><span class="tag">Full-time</span></div>
+    <div class="head"><h2 id="wwm-h">Three ways to work together</h2></div>
+    <div class="offers">
+      <div class="offer ink">
+        <span class="kind">Full-time</span>
         <h3>Join your team as a senior iOS engineer</h3>
-        <p>Hands-on in the codebase every day, and ready to lead when you need it.</p>
-        <div class="chips"><span>Architecture</span><span>Code review</span><span>Mentoring</span><span>Release planning</span></div>
-        <span class="cta">Start a conversation <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="po ink" href="#contact" data-umami-event="Service: Contract">
-        <div class="vtop"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="tag">Contract</span></div>
+        <p>Hands-on in the codebase every day, and ready to lead when you need it: architecture, code review, mentoring and release planning.</p>
+        <a class="btn" href="#contact" data-umami-event="Service: Full-time">Start a conversation</a>
+      </div>
+      <div class="offer">
+        <span class="kind">Contract</span>
         <h3>Extra senior capacity, when you need it</h3>
-        <p>Build and ship features in your app, in your tools and your process.</p>
-        <div class="chips"><span>GMT to GMT+4</span><span>US Eastern overlap</span><span>Your CI &amp; tools</span></div>
-        <span class="cta">Start a conversation <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
+        <p>Build and ship features in your app, in your tools and your process. Working hours overlap GMT to GMT+4 and US Eastern.</p>
+        <a class="btn" href="#contact" data-umami-event="Service: Contract">Start a conversation</a>
+      </div>
     </div>
-    <div class="svc-head"><span class="eyebrow">Or bring me a specific problem</span></div>
-    <ul class="svc">
-      <li><a href="#contact" data-umami-event="Service: Modernization"><span class="si"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span><span class="st"><b>Move your app to modern Swift</b><span>Objective-C to Swift, UIKit to SwiftUI, callbacks to async/await, without pausing releases.</span></span><span class="sf">Apps held back by old code</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-      <li><a href="#contact" data-umami-event="Service: AI workflow"><span class="si"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></span><span class="st"><b>Set up AI coding agents for your iOS team</b><span>Agent instructions, CI checks and review habits that keep quality high.</span></span><span class="sf">Teams adopting AI tools</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-      <li><a href="#contact" data-umami-event="Service: New app"><span class="si"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c1-3 3-5 3-5M14 4c4 0 6 2 6 6-2 4-6 7-9 8l-5-5c1-3 4-7 8-9z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg></span><span class="st"><b>Take an iOS app from idea to App Store</b><span>Architecture, SwiftUI build, testing and release, built the way a large team would.</span></span><span class="sf">Founders and startups</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-    </ul>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section wrap" id="process" aria-labelledby="process-h">
-    <span class="eyebrow">How we'd work</span>
-    <h2 id="process-h">Simple, visible and in your tools</h2>
-    <ol class="steps-row">
-      <li><span>1</span><h3>Talk</h3><p>We talk through your app, your team and what success looks like.</p></li>
-      <li><span>2</span><h3>Plan</h3><p>I review the app and codebase, then propose a plan with clear milestones.</p></li>
-      <li><span>3</span><h3>Build and ship</h3><p>Work lands as pull requests through your CI and reaches you in TestFlight builds you can try.</p></li>
-      <li><span>4</span><h3>Hand over</h3><p>Docs and walkthroughs, so your team owns everything we build.</p></li>
-    </ol>
+    <div class="problems">
+      <h3>Or bring me a specific problem</h3>
+      <ul>
+        <li><div><b>Move your app to modern Swift</b><p>Objective-C to Swift, UIKit to SwiftUI, callbacks to async/await, without pausing releases.</p></div><span class="for">For apps held back by old code</span></li>
+        <li><div><b>Set up AI coding agents for your iOS team</b><p>Agent instructions, CI checks and review habits that keep quality high.</p></div><span class="for">For teams adopting AI tools</span></li>
+        <li><div><b>Take an iOS app from idea to App Store</b><p>Architecture, SwiftUI build, testing and release, built the way a large team would.</p></div><span class="for">For founders and startups</span></li>
+      </ul>
+    </div>
+    <div class="problems" style="display:grid;gap:28px">
+      <h3 style="margin:0">How a project runs</h3>
+      <ol class="legs">
+        <li><b>Talk</b><p>We talk through your app, your team and what success looks like.</p></li>
+        <li><b>Plan</b><p>I review the app and codebase, then propose a plan with clear milestones.</p></li>
+        <li><b>Build and ship</b><p>Work lands as pull requests through your CI and reaches you in TestFlight builds you can try.</p></li>
+        <li><b>Hand over</b><p>Docs and walkthroughs, so your team owns everything we build.</p></li>
+      </ol>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact">
-      <div style="display:grid;gap:16px">
-        <span class="eyebrow">Contact</span>
+      <div class="head">
         <h2 id="contact-h">Tell me about your app. I'll tell you how I can help.</h2>
-        <p style="color:var(--muted)">Full-time or contract. Remote across GMT to GMT+4, or open to relocation.</p>
+        <p class="lede">Full-time or contract. Remote across GMT to GMT+4, or open to relocation.</p>
       </div>
+      <a class="mail" data-umami-event="Contact: Email link" href="mailto:usmaniverse@gmail.com">usmaniverse@gmail.com</a>
       <div class="clist">
-        <div class="crow"><span class="k">Email</span><span class="v"><a data-umami-event="Contact: Email link" href="mailto:usmaniverse@gmail.com">usmaniverse@gmail.com</a></span><button data-umami-event="Contact: Copy email" class="btn small" type="button" data-copy="usmaniverse@gmail.com">Copy</button></div>
-        <div class="crow"><span class="k">WhatsApp</span><span class="v">Message me on WhatsApp</span><a data-umami-event="Contact: WhatsApp" class="btn small" href="https://wa.me/923219459630" target="_blank" rel="noopener">Open ↗</a></div>
-        <div class="crow"><span class="k">LinkedIn</span><span class="v"><a data-umami-event="Contact: LinkedIn" href="https://www.linkedin.com/in/usmaniverse" target="_blank" rel="noopener">linkedin.com/in/usmaniverse</a></span><a data-umami-event="Contact: LinkedIn" class="btn small" href="https://www.linkedin.com/in/usmaniverse" target="_blank" rel="noopener">Open ↗</a></div>
-        <div class="crow"><span class="k">GitHub</span><span class="v"><a data-umami-event="Contact: GitHub" href="https://github.com/usmaniverse" target="_blank" rel="noopener">github.com/usmaniverse</a></span><a data-umami-event="Contact: GitHub" class="btn small" href="https://github.com/usmaniverse" target="_blank" rel="noopener">Open ↗</a></div>
-        <div class="crow"><span class="k">CV</span><span class="v">For hiring teams</span><a data-umami-event="Contact: Download CV" class="btn small" href="resume.pdf" target="_blank" rel="noopener" data-resume>Download</a></div>
+        <button data-umami-event="Contact: Copy email" class="btn small" type="button" data-copy="usmaniverse@gmail.com">Copy email</button>
+        <a data-umami-event="Contact: WhatsApp" class="btn small" href="https://wa.me/923219459630" target="_blank" rel="noopener">WhatsApp</a>
+        <a data-umami-event="Contact: LinkedIn" class="btn small" href="https://www.linkedin.com/in/usmaniverse" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-umami-event="Contact: GitHub" class="btn small" href="https://github.com/usmaniverse" target="_blank" rel="noopener">GitHub</a>
+        <a data-umami-event="Contact: Download CV" class="btn small" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
     </div>
   </section>
@@ -505,34 +418,23 @@ footer{padding-block:32px 48px;border-top:1px solid var(--line);font-size:.8125r
 </main>
 
 <div class="toast" role="status" aria-live="polite" hidden></div>
-
 <script>
 (function(){
   var toast=document.querySelector('.toast'),t;
   function say(m){toast.textContent=m;toast.hidden=false;clearTimeout(t);t=setTimeout(function(){toast.hidden=true},2200)}
-  var spot=document.querySelector('.spot');
-  if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-    addEventListener('pointermove',function(e){spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px')},{passive:true});
-  }
+  // Size the email so it spans the same width as the button row below it.
+  var mail=document.querySelector('.mail'),row=document.querySelector('.clist');
+  function fit(){if(!mail||!row)return;var bs=row.children,l=1e9,r=0;
+    for(var i=0;i<bs.length;i++){var b=bs[i].getBoundingClientRect();l=Math.min(l,b.left);r=Math.max(r,b.right)}
+    var target=Math.min(r-l,row.getBoundingClientRect().width);if(!(target>0))return;
+    mail.style.fontSize='';var fs=parseFloat(getComputedStyle(mail).fontSize),w=mail.getBoundingClientRect().width;
+    if(w>0)mail.style.fontSize=(fs*target/w).toFixed(2)+'px'}
+  fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
   document.querySelectorAll('[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){var v=b.getAttribute('data-copy');
-      try{navigator.clipboard.writeText(v).then(function(){say('Copied '+v)},function(){fb(b)})}catch(e){fb(b)}});
+      try{navigator.clipboard.writeText(v).then(function(){say('Copied '+v)},function(){say('Press Ctrl/Cmd+C to copy')})}catch(e){say('Press Ctrl/Cmd+C to copy')}});
   });
-  function fb(b){var v=b.parentNode.querySelector('.v');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Selected. Press Ctrl/Cmd+C to copy')}
-  if(window.claude&&typeof window.claude.use==='function'){
-    var dlP=window.claude.use('downloads');
-    document.querySelectorAll('[data-resume]').forEach(function(a){
-      a.addEventListener('click',function(ev){ev.preventDefault();
-        dlP.then(function(dl){
-          if(!dl){say('Download unavailable here. Email me for the resume.');return}
-          return fetch('resume.pdf').then(function(r){return r.blob()}).then(function(b){return dl.save({filename:'Muhammad_Usman_Javed_Resume.pdf',data:b})})
-            .then(function(){say('Resume saved');try{window.umami&&umami.track('CV saved')}catch(e){}},function(err){if(err&&err.code==='declined')return;say('Could not download the resume right now')});
-        });
-      });
-    });
-  }
 })();
 </script>
-
 </body>
 </html>
